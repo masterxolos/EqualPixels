@@ -5,6 +5,9 @@ using UnityEngine;
 public class StoryController : MonoBehaviour
 {
     [SerializeField] private GameObject[] texts = new GameObject[15];
+    [SerializeField] private GameObject[] pcyaziları = new GameObject[15];
+    [SerializeField] private GameObject[] sahneler = new GameObject[15];
+    [SerializeField] private GameObject[] pacmanButtons = new GameObject[15];
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,16 @@ public class StoryController : MonoBehaviour
         
     }
 
+    public void onSahne1Buttonpressed()
+    {
+        sahneler[0].SetActive(false);
+        sahneler[1].SetActive(true);
+        texts[1].SetActive(true);
+    }
+
     public void onButton1Pressed()
     {
+        Debug.Log("asd");
         texts[1].SetActive(false);
         texts[2].SetActive(true);
     }
@@ -26,6 +37,13 @@ public class StoryController : MonoBehaviour
     {
         texts[2].SetActive(false);
         texts[3].SetActive(true);
+        sahneler[1].SetActive(false);
+        sahneler[2].SetActive(true);
+        
+        pcyaziları[0].SetActive(true);
+        pcyaziları[1].SetActive(true);
+        //pcyaziları[2].SetActive(true);
+        //pcyaziları[3].SetActive(true);
     }
     public void onButton3Pressed()
     {
@@ -44,21 +62,36 @@ public class StoryController : MonoBehaviour
         texts[5].SetActive(false);
         texts[6].SetActive(false);
         texts[7].SetActive(false);
-        texts[8].SetActive(true);
+        pacmanButtons[0].SetActive(true);
+        
+        pcyaziları[4].SetActive(true);
+        pcyaziları[6].SetActive(true);
     }
     public void onButton6Pressed()
     {
         texts[5].SetActive(false);
         texts[6].SetActive(false);
         texts[7].SetActive(false);
-        texts[8].SetActive(true);
+        pacmanButtons[0].SetActive(true);
+        
+        pcyaziları[4].SetActive(true);
+        pcyaziları[6].SetActive(true);
     }
     public void onButton7Pressed()
     {
         texts[5].SetActive(false);
         texts[6].SetActive(false);
         texts[7].SetActive(false);
+        pacmanButtons[0].SetActive(true);
+        
+        pcyaziları[4].SetActive(true);
+        pcyaziları[6].SetActive(true);
+    }
+
+    public void onPacmanButton1Pressed()
+    {
         texts[8].SetActive(true);
+        pacmanButtons[0].SetActive(false);
     }
     public void onButton8Pressed()
     {
@@ -107,7 +140,8 @@ public class StoryController : MonoBehaviour
     public void onButton15Pressed()
     {
         texts[15].SetActive(false);
-        texts[16].SetActive(true);
+        sahneler[2].SetActive(false);
+        sahneler[3].SetActive(true);
     }
     
 }
